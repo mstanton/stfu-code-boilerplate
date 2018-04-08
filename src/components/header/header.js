@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import './header.scss';
 
-class Header extends Component {
-	render() {
+const Header = () => {
 		return (
 			<header>
-				
 				<h1>Header</h1>
 			</header>
 		);
-	}
 }
 
 export default Header;
