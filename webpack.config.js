@@ -1,25 +1,8 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 //const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var path = require('path');
-const indexHtml = path.join(__dirname, "src", "index.html");
-
-
-const live = process.env.NODE_ENV === "production";
-const mainCss = ["css-loader!sass-loader", path.join(__dirname, "src", "main.scss")];
-
-if (live) {
-    mainCss.unshift("file-loader?name=[name].[ext]", "extract-loader");
-} else {
-    mainCss.unshift("style-loader");
-}
-
-
-
 module.exports = {
 	module: {
-		//context: path.resolve(__dirname, './src'),
-		
 		rules: [
 			{
 				test: /\.scss$/,
@@ -38,14 +21,13 @@ module.exports = {
 						loader: "file-loader",
 						options: {
                             name: "[name].[ext]",
-                        },
+                        }
                     },
                     {
 						loader: "extract-loader",
 						options: {
                             publicPath: "../",
                         }
-						
                     },
                     {
                         loader: "css-loader",
