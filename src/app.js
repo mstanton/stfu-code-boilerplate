@@ -7,7 +7,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
+			data: null
 		};
 	}
 	componentDidMount() {
@@ -16,22 +16,22 @@ class App extends Component {
 		.then( data => this.setState( { data: data } )
 	)}
 
-	componentWillReceiveProps( props, state  ) {
-		console.log(props, state);
-	}
+	// componentWillReceiveProps( props, state  ) {
+	// 	console.log(props, state);
+	// }
 
 	
 	render() {		
-		console.log('STATE', this.state );
-		
 		const { data } = this.state
+
+		console.log( 'DATA', data )
 		
-	
 		return (
 			<div>
+				<h3>This is some sweet test data</h3>
 				{
-					_.map( this.state.data, ( item ) => {
-						return <p>{item.id}<br/>{item.title}</p>
+					data && data.map( ( item, index ) => {
+						return <p key={ index }>id: {item.id}<br/>title: {item.title}</p>
 					})
 				}
 			</div>
