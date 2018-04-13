@@ -20,18 +20,18 @@ module.exports = {
                     {
 						loader: "file-loader",
 						options: {
-                            name: "[name].[ext]",
+                            name: "[name].[ext]"
                         }
                     },
                     {
-						loader: "extract-loader",
-						options: {
-                            publicPath: "../",
-                        }
+						loader: "extract-loader"
                     },
                     {
-                        loader: "css-loader",
-                    },
+						loader: "css-loader"
+					},
+					{
+						loader: "sass-loader"
+					}
                 ],
             },
             {

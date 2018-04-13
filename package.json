@@ -1,11 +1,11 @@
 {
-  "name": "waxx",
+  "name": "waxxx",
   "version": "1.0.0",
   "description": "barebones config FED environment",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --host 0.0.0.0 --port 8080",
-    "build": "webpack --mode production"
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack mode production"
   },
   "repository": {
     "type": "git"
@@ -33,7 +33,5 @@
     "webpack-cli": "^2.0.8",
     "webpack-dev-server": "^3.1.0"
   },
-  "dependencies": {
-    "lodash": "^4.17.5"
-  }
+  "dependencies": {}
 }

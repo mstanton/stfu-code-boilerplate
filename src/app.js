@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/header/header';
-import _ from 'lodash';
-
+import './styles.scss';
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -14,6 +13,7 @@ class App extends Component {
 		fetch('http://localhost:3000/api/song/2')
 		.then(response => response.json())
 		.then( data => this.setState( { data: data } )
+		.catch( error => console.error(error))
 	)}
 
 	// componentWillReceiveProps( props, state  ) {
@@ -28,6 +28,7 @@ class App extends Component {
 		
 		return (
 			<div>
+				<Header/>
 				<h3>This is some sweet test data</h3>
 				{
 					data && data.map( ( item, index ) => {
