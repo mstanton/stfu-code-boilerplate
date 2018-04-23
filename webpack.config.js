@@ -35,7 +35,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.jpg$/,
+                test: /\.jpg$.png$/,
                 loaders: [
                     {
                         loader: "file-loader"
@@ -46,8 +46,12 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				use: {
-					loader: 'babel-loader'
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env']
+					}
 				}
+				
 			},
 			{
 				test: /\.html$/,

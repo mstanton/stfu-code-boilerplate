@@ -1,45 +1,49 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/header/header';
-import './styles.scss';
+import Crates from './components/crates/crates';
+import './main.scss';
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: null
+			data: {}
 		};
 	}
-	componentDidMount() {
-		fetch('http://localhost:3000/api/song/2')
-		.then(response => response.json())
-		.then( data => this.setState( { data: data } )
-		.catch( error => console.error(error))
-	)}
 
-	// componentWillReceiveProps( props, state  ) {
-	// 	console.log(props, state);
-	// }
+	componentDidMount() {}
 
-	
-	render() {		
-		const { data } = this.state
+	handleFetch = () => {
+		return fetch( 'http://localhost:8080/src/mock.json')
+			.then( ( response ) => {
+				return response.json();
+			})
+			.then( ( result ) => {
+				this.setState({ data: result });
+			});
+	};
 
-		console.log( 'DATA', data )
-		
+	render() {
+		let { data } = this.state;
 		return (
-			<div>
-				<Header/>
-				<h3>This is some sweet test data</h3>
+			<div className="app">
+				<button onClick={ this.handleFetch }>Fake Fetch</button>
+				
+				<Header />
+
 				{
-					data && data.map( ( item, index ) => {
-						return <p key={ index }>id: {item.id}<br/>title: {item.title}</p>
-					})
-				}
+					data.crates && <Crates crates={ data.crates }/>
+				}	
 			</div>
 		);
 	}
 }
 
+
+
 export default App;
 
 ReactDOM.render(<App />, document.getElementById('app'));
+/* 
+
+*/
