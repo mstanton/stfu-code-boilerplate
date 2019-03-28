@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/header/header';
 import Crates from './components/crates/crates';
-import './main.scss';
+//import './main.scss';
 class App extends Component {
 	constructor(props) {
 		super(props);
