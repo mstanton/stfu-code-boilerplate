@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
-import './header.scss';
+//import './header.scss';
 
 export default class Header extends PureComponent {
 	render() {
 		return (
 			<header>
 				<div>
-					<span><img src="http://i.pravatar.cc/300"/></span>
+					{/* <span><img src="http://i.pravatar.cc/300"/></span> */}
 					<ul>
 						<li>Account</li>
 						<li>Login</li>
