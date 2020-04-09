@@ -1,7 +1,7 @@
 {
-  "name": "funfunfun",
+  "name": "stfu-boilerplate",
   "version": "1.0.0",
-  "description": "play with react 16.7 alpha",
+  "description": "quick react project template",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
